@@ -3,23 +3,15 @@
 layout: home
 
 hero:
-  name: "Build your own OJ"
-  text: "We are going to build OJ from scratch. Step by step."
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+  name: Build your own OJ
+  tagline: We are going to build OJ from scratch. Step by step.
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 第一部：プロトタイプをつくる
+    details: オンラインジャッジ構築のメンタルモデルとして、GitHub Actions のアーキテクチャ (Workflows, Jobs, Artifacts) を紐解きます。
+    link: /prototype
+  - title: 第二部：Runner をつくる
+    details: Coming soon...
+  - title: 第三部：Server をつくる
+    details: Coming soon...
 ---
-
