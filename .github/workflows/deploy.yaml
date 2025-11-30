@@ -1,0 +1,37 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          - path: docs
+            dist: docs/.vitepress/dist
+          - path: slides
+            dist: slides/dist
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Build
+        run: |
+          npm ci
+          cd ${{ matrix.package.path }}
+          npm run build
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy ${{ matrix.package.dist }} --project-name=traonboarding-${{ matrix.package.path }}
