@@ -1,0 +1,17 @@
+name: Runner 00
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Job
+        env:
+          SUBMISSION: 'fn main() { println!("Hello, World!"); }'
+        run: |
+          cargo new worker
+          cd worker
+          printenv SUBMISSION > src/main.rs
+          cargo run --release

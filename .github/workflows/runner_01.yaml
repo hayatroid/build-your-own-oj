@@ -1,0 +1,23 @@
+name: Runner 01
+
+on:
+  workflow_dispatch:
+    inputs:
+      submission:
+        description: 提出
+        required: true
+        type: string
+        default: 'fn main() { println!("Hello, World!"); }'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Job
+        env:
+          SUBMISSION: ${{ inputs.submission }}
+        run: |
+          cargo new worker
+          cd worker
+          printenv SUBMISSION > src/main.rs
+          cargo run --release > $GITHUB_STEP_SUMMARY

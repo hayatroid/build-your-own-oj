@@ -24,7 +24,12 @@ export default defineConfig({
     sidebar: [
       {
         text: "第一部：プロトタイプをつくる",
-        items: [],
+        items: [
+          {
+            text: "テスト",
+            link: "/prototype/docs",
+          },
+        ],
       },
       {
         text: "第二部：Runner をつくる",
@@ -37,7 +42,10 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/hayatroid/build-your-own-oj" },
+      {
+        icon: "github",
+        link: "https://github.com/hayatroid/build-your-own-oj",
+      },
     ],
 
     search: {
