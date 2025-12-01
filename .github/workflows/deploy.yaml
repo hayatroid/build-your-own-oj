@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,9 +29,31 @@ jobs:
           cd ${{ matrix.package.path }}
           npm run build
 
+      - name: Upload dist
+        uses: actions/upload-artifact@v5
+        with:
+          name: ${{ matrix.package.path }}
+          path: ${{ matrix.package.dist }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dist
+        uses: actions/download-artifact@v6
+        with:
+          name: docs
+          path: dist
+
+      - name: Download dist
+        uses: actions/download-artifact@v6
+        with:
+          name: slides
+          path: dist/slides
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ${{ matrix.package.dist }} --project-name=traonboarding-${{ matrix.package.path }}
+          command: pages deploy dist --project-name=build-your-own-oj
