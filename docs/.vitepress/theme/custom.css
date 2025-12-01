@@ -1,5 +1,7 @@
 :root {
-  --vp-font-family-base:
-    Inter, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Noto Sans JP,
-    sans-serif, Segoe UI Emoji, Segoe UI Symbol;
+  --vp-font-family-base: Inter, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans,
+    Noto Sans JP, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
+  --vp-c-brand-1: #ac004b;
+  --vp-c-brand-2: #c91a5e;
+  --vp-c-brand-3: #e0457b;
 }

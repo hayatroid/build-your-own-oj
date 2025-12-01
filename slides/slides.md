@@ -1,5 +1,6 @@
 ---
 theme: default
+favicon: '/logo.png'
 fonts:
   sans: Inter, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Noto Sans JP, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 ---
