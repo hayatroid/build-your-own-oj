@@ -44,7 +44,7 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: worker
-          path: .
+          path: worker
       - name: Run Job
         env:
           STDIN: ${{ matrix.stdin }}

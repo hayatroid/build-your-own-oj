@@ -29,10 +29,23 @@ export default defineConfig({
     sidebar: [
       {
         text: "第一部：プロトタイプをつくる",
+        link: "/prototype/",
         items: [
           {
-            text: "テスト",
-            link: "/prototype/docs",
+            text: "決まったコードを実行する",
+            link: "/prototype/runner_00",
+          },
+          {
+            text: "受け取ったコードを実行する",
+            link: "/prototype/runner_01",
+          },
+          {
+            text: "受け取った標準入力で実行する",
+            link: "/prototype/runner_02",
+          },
+          {
+            text: "ビルドと実行を分ける",
+            link: "/prototype/runner_03",
           },
         ],
       },

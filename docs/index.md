@@ -10,8 +10,12 @@ hero:
       text: はじめる
       link: /prototype/
     - theme: alt
-      text: スライド
+      text: スライド (準備中)
       link: /slides/
+      target: '_blank'
+    - theme: alt
+      text: GitHub
+      link: https://github.com/hayatroid/build-your-own-oj
       target: '_blank'
 
 features:
