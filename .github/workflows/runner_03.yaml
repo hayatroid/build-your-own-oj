@@ -1,0 +1,53 @@
+name: Runner 03
+
+on:
+  workflow_dispatch:
+    inputs:
+      submission:
+        description: 提出
+        required: true
+        type: string
+        default: 'fn main() { proconio::input!(a: i32, b: i32); println!("{}", a + b); }'
+      stdin:
+        description: 標準入力
+        required: true
+        type: string
+        default: '["1 2", "3 4", "12345678 87654321"]'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Job
+        env:
+          SUBMISSION: ${{ inputs.submission }}
+        run: |
+          cargo new worker
+          cd worker
+          cargo add proconio
+          printenv SUBMISSION > src/main.rs
+          cargo build --release
+      - name: Upload Binary
+        uses: actions/upload-artifact@v5
+        with:
+          name: worker
+          path: worker/target/release/worker
+  run:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stdin: ${{ fromJson(inputs.stdin) }}
+    steps:
+      - name: Download Binary
+        uses: actions/download-artifact@v6
+        with:
+          name: worker
+          path: .
+      - name: Run Job
+        env:
+          STDIN: ${{ matrix.stdin }}
+        run: |
+          chmod +x worker
+          printenv STDIN | ./worker > $GITHUB_STEP_SUMMARY
