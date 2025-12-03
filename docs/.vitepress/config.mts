@@ -55,6 +55,22 @@ export default defineConfig({
             text: "ぐっと睨む",
             link: "/prototype/abstract_it",
           },
+          {
+            text: "Hello, Docker!",
+            link: "/prototype/runner_04",
+          },
+          {
+            text: "実行メトリクスを取得する",
+            link: "/prototype/runner_05",
+          },
+          {
+            text: "実行結果を判定する",
+            link: "/prototype/runner_06",
+          },
+          {
+            text: "ぐぐっと睨む",
+            link: "/prototype/abstract_it_more",
+          },
         ],
       },
       {
