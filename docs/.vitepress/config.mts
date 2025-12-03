@@ -75,10 +75,12 @@ export default defineConfig({
       },
       {
         text: "第二部：Runner をつくる",
+        link: "/runner/",
         items: [],
       },
       {
         text: "第三部：Server をつくる",
+        link: "/server/",
         items: [],
       },
     ],
