@@ -20,6 +20,10 @@ export default defineConfig({
 
   head: [["link", { rel: "icon", href: "/logo.png" }]],
 
+  markdown: {
+    lineNumbers: true,
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/logo.png",
@@ -32,20 +36,24 @@ export default defineConfig({
         link: "/prototype/",
         items: [
           {
-            text: "決まったコードを実行する",
+            text: "Hello, GitHub Actions!",
             link: "/prototype/runner_00",
           },
           {
-            text: "受け取ったコードを実行する",
+            text: "コードを受け取る",
             link: "/prototype/runner_01",
           },
           {
-            text: "受け取った標準入力で実行する",
+            text: "標準入力を受け取る",
             link: "/prototype/runner_02",
           },
           {
             text: "ビルドと実行を分ける",
             link: "/prototype/runner_03",
+          },
+          {
+            text: "ぐっと睨む",
+            link: "/prototype/abstract_it",
           },
         ],
       },

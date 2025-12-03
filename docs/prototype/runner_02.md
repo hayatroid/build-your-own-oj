@@ -1,3 +1,3 @@
-# 受け取った標準入力で実行する
+# 標準入力を受け取る
 
 <<< @/../.github/workflows/runner_02.yaml

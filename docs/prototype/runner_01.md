@@ -1,3 +1,3 @@
-# 受け取ったコードを実行する
+# コードを受け取る
 
 <<< @/../.github/workflows/runner_01.yaml
