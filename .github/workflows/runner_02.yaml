@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       submission:
-        description: 提出
+        description: 提出コード
         required: true
         type: string
         default: 'fn main() { proconio::input!(a: i32, b: i32); println!("{}", a + b); }'
-      stdin:
-        description: 標準入力
+      testcases:
+        description: テストケース
         required: true
         type: string
         default: '["1 2", "3 4", "12345678 87654321"]'
@@ -19,15 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        stdin: ${{ fromJson(inputs.stdin) }}
+        testcase: ${{ fromJson(inputs.testcases) }}
     steps:
       - name: Run Job
         env:
           SUBMISSION: ${{ inputs.submission }}
-          STDIN: ${{ matrix.stdin }}
+          TESTCASE: ${{ matrix.testcase }}
         run: |
           cargo new worker
           cd worker
           cargo add proconio
           printenv SUBMISSION > src/main.rs
-          printenv STDIN | cargo run --release > $GITHUB_STEP_SUMMARY
+          printenv TESTCASE | cargo run --release > $GITHUB_STEP_SUMMARY

@@ -44,7 +44,7 @@ export default defineConfig({
             link: "/prototype/runner_01",
           },
           {
-            text: "標準入力を受け取る",
+            text: "テストケースを受け取る",
             link: "/prototype/runner_02",
           },
           {

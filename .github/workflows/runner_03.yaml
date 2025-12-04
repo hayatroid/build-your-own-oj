@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       submission:
-        description: 提出
+        description: 提出コード
         required: true
         type: string
         default: 'fn main() { proconio::input!(a: i32, b: i32); println!("{}", a + b); }'
-      stdin:
-        description: 標準入力
+      testcases:
+        description: テストケース
         required: true
         type: string
         default: '["1 2", "3 4", "12345678 87654321"]'
@@ -37,16 +37,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        stdin: ${{ fromJson(inputs.stdin) }}
+        testcase: ${{ fromJson(inputs.testcases) }}
     steps:
       - name: Download Binary
         uses: actions/download-artifact@v6
         with:
           name: worker
-          path: worker
+          path: .
       - name: Run Job
         env:
-          STDIN: ${{ matrix.stdin }}
+          TESTCASE: ${{ matrix.testcase }}
         run: |
           chmod +x worker
-          printenv STDIN | ./worker > $GITHUB_STEP_SUMMARY
+          printenv TESTCASE | ./worker > $GITHUB_STEP_SUMMARY
