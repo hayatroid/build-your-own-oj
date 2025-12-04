@@ -18,7 +18,7 @@ export default defineConfig({
   description: "We are going to build OJ from scratch. Step by step.",
   lang: "ja-JP",
 
-  head: [["link", { rel: "icon", href: "/logo.png" }]],
+  head: [["link", { rel: "icon", href: "/trao.svg" }]],
 
   markdown: {
     lineNumbers: true,
@@ -26,7 +26,7 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/logo.png",
+    logo: "/trao.svg",
 
     nav: [{ text: "Home", link: "/" }],
 
