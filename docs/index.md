@@ -14,8 +14,8 @@ hero:
       link: /slides/
       target: '_blank'
     - theme: alt
-      text: GitHub
-      link: https://github.com/hayatroid/build-your-own-oj
+      text: ポータル
+      link: https://traonboard.ing
       target: '_blank'
 
 features:
@@ -26,6 +26,6 @@ features:
     details: オンラインジャッジ構築の実現手段として、AWS のサービス (EC2, S3, SQS) を紐解きます。
     link: /runner/
   - title: 第三部：Server をつくる (準備中)
-    details: 作問者向けの DSL をつくり、幅広い問題を定義・解釈可能にするサーバ実装を紐解きます。
+    details: 作問者向けの DSL をつくり、幅広い問題に対する判定パイプラインを組めるようにします。
     link: /server/
 ---
