@@ -18,7 +18,7 @@ export default defineConfig({
   description: "We are going to build OJ from scratch. Step by step.",
   lang: "ja-JP",
 
-  head: [["link", { rel: "icon", href: "/trao.svg" }]],
+  head: [["link", { rel: "icon", href: "/favicon.svg" }]],
 
   markdown: {
     lineNumbers: true,

@@ -1,6 +1,6 @@
 ---
 theme: default
-favicon: '/trao.svg'
+favicon: '/favicon.svg'
 fonts:
   sans: Inter, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Noto Sans JP, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 ---
